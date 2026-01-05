@@ -4,7 +4,7 @@ from fastapi import APIRouter, status
 logger = logging.getLogger(__name__)
 
 router = APIRouter(
-    prefix="/TLA", 
+    prefix="/MyCase",
     tags=["TLA"]
 )
 
