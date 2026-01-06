@@ -1,5 +1,6 @@
 import logging
 from fastapi import APIRouter, status
+from models.request import Keys
 
 logger = logging.getLogger(__name__)
 
@@ -10,7 +11,7 @@ router = APIRouter(
 
 @router.post("/", status_code=status.HTTP_201_CREATED)
 def create_tokens(
-    request
+    request: Keys
 ):
     logging.info(request)
     return request
