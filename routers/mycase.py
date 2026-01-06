@@ -5,7 +5,7 @@ logger = logging.getLogger(__name__)
 
 router = APIRouter(
     prefix="/MyCase",
-    tags=["TLA"]
+    tags=["Mycase"]
 )
 
 @router.post("/", status_code=status.HTTP_201_CREATED)
