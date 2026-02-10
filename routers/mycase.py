@@ -1,6 +1,7 @@
 import logging
-from fastapi import APIRouter, status
+from typing import Optional
 from models.request import Keys
+from fastapi import APIRouter, status, Query
 
 logger = logging.getLogger(__name__)
 
@@ -17,6 +18,11 @@ def create_tokens(
     return request
 
 @router.get("/")
-def get_tokens():
-    logging.info("Request")
-    return
+def get_tokens(code : Optional[str] = Query(None)):
+
+    if code:
+        logging.info(f"Code: {code}")
+        return {"Status":"Success", "Received_code":code}
+    
+    logger.warning("The code does not provided")
+    return{"Status":"Error", "Message":"No code provided"}
