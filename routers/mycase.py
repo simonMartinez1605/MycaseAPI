@@ -18,4 +18,5 @@ def create_tokens(
 
 @router.get("/")
 def get_tokens():
-    return 
+    logging.info("Request")
+    return
